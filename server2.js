@@ -44,29 +44,6 @@ app.get('/post_createacc',function(req,res){
 	  }
 	});
 	
-app.get('/post_deleteacc',function(req,res){
-    console.log("post register function");
-     let sql = `delete from student where an="${req.query.an}";
- 
-	db.all(sql, [], (err, rows) => {
-	  if (err) {
-		throw err;
-	  }
-	  rows.forEach((row) => {
-		console.log(row.name);
-	  });
-	});
-	
-	var transporter = nodemailer.createTransport({
-	  service: 'yahoo',
-	  auth: {
-		user: 'email@yahoo.com',
-		pass: 'pass'
-	  }
-	});
-
-
-
 
 
 	var mailOptions = {
