@@ -17,9 +17,6 @@ app.get('/',function(req,res){
 app.get('/createacc',function(req,res){
     console.log("create account page");
     res.sendFile(__dirname+"/"+"createacc.html");
-app.get('/deleteacc',function(req,res){
-    console.log("delete account page");
-    res.sendFile(__dirname+"/"+"deleteacc.html");
     
 });
 
