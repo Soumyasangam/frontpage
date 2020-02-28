@@ -23,7 +23,7 @@ app.get('/deleteacc',function(req,res){
     
 });
 
-app.get('/post_register',function(req,res){
+app.get('/post_createacc',function(req,res){
     console.log("post register function");
      let sql = `insert into student values("${req.query.name}","${req.query.an}","${req.query.gender}","${req.query.email}","${req.query.actype}",${req.query.age})`;
  
@@ -43,6 +43,29 @@ app.get('/post_register',function(req,res){
 		pass: 'pass'
 	  }
 	});
+	
+app.get('/post_deleteacc',function(req,res){
+    console.log("post register function");
+     let sql = `delete from student where usn="${req.query.an}";
+ 
+	db.all(sql, [], (err, rows) => {
+	  if (err) {
+		throw err;
+	  }
+	  rows.forEach((row) => {
+		console.log(row.name);
+	  });
+	});
+	
+	var transporter = nodemailer.createTransport({
+	  service: 'yahoo',
+	  auth: {
+		user: 'email@yahoo.com',
+		pass: 'pass'
+	  }
+	});
+
+
 
 
 
